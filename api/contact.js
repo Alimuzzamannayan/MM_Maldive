@@ -1,4 +1,4 @@
-const { Resend } = require("resend");
+const nodemailer = require("nodemailer");
 
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -14,7 +14,15 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: "Name and email are required" });
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const transporter = nodemailer.createTransport({
+    host: "smtp.zoho.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "marketing@metamorphosis.com.bd",
+      pass: process.env.ZOHO_SMTP_PASS,
+    },
+  });
 
   const html = `<!DOCTYPE html>
 <html>
@@ -52,22 +60,17 @@ module.exports = async (req, res) => {
 </body></html>`;
 
   try {
-    const { data, error } = await resend.emails.send({
-      from: "Metamorphosis MV <onboarding@resend.dev>",
-      to: ["marketing@metamorphosis.com.bd"],
-      reply_to: email,
+    await transporter.sendMail({
+      from: '"Metamorphosis MV Website" <marketing@metamorphosis.com.bd>',
+      to: "marketing@metamorphosis.com.bd",
+      replyTo: email,
       subject: `New Quote: ${name}${company ? ` — ${company}` : ""}`,
       html,
     });
 
-    if (error) {
-      console.error("Resend error:", JSON.stringify(error));
-      return res.status(500).json({ error: error.message });
-    }
-
-    return res.status(200).json({ ok: true, id: data?.id });
+    return res.status(200).json({ ok: true });
   } catch (err) {
-    console.error("Unexpected error:", err.message);
-    return res.status(500).json({ error: "Unexpected server error" });
+    console.error("SMTP error:", err.message);
+    return res.status(500).json({ error: err.message });
   }
 };
