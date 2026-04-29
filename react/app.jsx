@@ -5,31 +5,53 @@ const { useEffect } = React;
 
 function Nav() {
   const [scrolled, setScrolled] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     document.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => document.removeEventListener("scroll", onScroll);
   }, []);
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+  const close = () => setMenuOpen(false);
   return (
-    <nav className={`rb-nav ${scrolled ? "scrolled" : ""}`}>
-      <div className="rb-container rb-nav-inner">
-        <a href="#" className="rb-logo-link">
-          <img src="assets/logo-full.png" alt="Metamorphosis" />
-        </a>
-        <ul className="rb-nav-links">
-          {[
-            ["Services", "#services"],
-            ["About", "#why"],
-            ["Contact", "react/contact.html"],
-            ["Blog", "#blog"],
-          ].map(([label, href]) => <NavLink key={label} label={label} href={href} />)}
-        </ul>
-        <MagneticButton href="react/contact.html" variant="primary">
-          Get a Quote
-        </MagneticButton>
+    <>
+      <nav className={`rb-nav ${scrolled ? "scrolled" : ""}`} style={{ position: "sticky", top: 0, zIndex: 150 }}>
+        <div className="rb-container rb-nav-inner">
+          <a href="#" className="rb-logo-link" onClick={close}>
+            <img src="assets/logo-full.png" alt="Metamorphosis" />
+          </a>
+          <ul className="rb-nav-links">
+            {[
+              ["Services", "#services"],
+              ["About", "#why"],
+              ["Contact", "react/contact.html"],
+              ["Blog", "#blog"],
+            ].map(([label, href]) => <NavLink key={label} label={label} href={href} />)}
+          </ul>
+          <MagneticButton href="react/contact.html" variant="primary">
+            Get a Quote
+          </MagneticButton>
+          <button
+            className={`rb-hamburger ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(o => !o)}
+            aria-label="Toggle menu"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
+      </nav>
+      <div className={`rb-mobile-menu ${menuOpen ? "open" : ""}`}>
+        <a href="#services" onClick={close}>Services</a>
+        <a href="#why" onClick={close}>About</a>
+        <a href="react/contact.html" onClick={close}>Contact</a>
+        <a href="#blog" onClick={close}>Blog</a>
+        <a href="react/contact.html" className="rb-mobile-cta" onClick={close}>Get a Quote →</a>
       </div>
-    </nav>
+    </>
   );
 }
 

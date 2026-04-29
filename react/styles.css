@@ -1,4 +1,4 @@
-/* React framework styles — Metamorphosis MV */
+﻿/* React framework styles — Metamorphosis MV */
 :root {
   --bg: #FAFAFA;
   --card: #FFFFFF;
@@ -338,22 +338,120 @@ img { max-width: 100%; display: block; }
 .cf-card p, .cf-card a { font-size: 14px; color: var(--body); font-weight: 300; line-height: 1.6; }
 .cf-card a:hover { color: var(--teal); }
 
+/* ── Hamburger button (hidden on desktop) ── */
+.rb-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px; height: 40px;
+  background: none; border: none; cursor: pointer;
+  padding: 4px; border-radius: 8px;
+  transition: background .2s;
+  z-index: 200;
+}
+.rb-hamburger:hover { background: rgba(6,16,43,0.06); }
+.rb-hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--navy); border-radius: 2px;
+  transition: all .3s cubic-bezier(.2,.7,.2,1);
+}
+.rb-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.rb-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.rb-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav drawer */
+.rb-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(6,16,43,0.97);
+  z-index: 100;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 80px 32px 48px;
+}
+.rb-mobile-menu.open { display: flex; }
+.rb-mobile-menu a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900; font-size: 28px;
+  color: #fff; letter-spacing: -0.02em;
+  padding: 12px 0; width: 100%; text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color .2s;
+}
+.rb-mobile-menu a:last-child { border-bottom: none; }
+.rb-mobile-menu a:hover { color: var(--teal); }
+.rb-mobile-cta {
+  margin-top: 28px;
+  background: var(--teal) !important;
+  color: var(--navy) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 900 !important; font-size: 16px !important;
+  padding: 14px 36px !important;
+  border-radius: 99px !important;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform .2s, box-shadow .2s;
+}
+.rb-mobile-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,229,192,0.35); }
+
+@media (max-width: 1100px) {
+  .rb-footer-grid { grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 32px; }
+}
+
 @media (max-width: 900px) {
+  .rb-container { padding: 0 24px; }
+  .rb-footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .rb-odoo-inner { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+  .rb-odoo-left { display: flex; justify-content: center; }
+  .rb-why-grid { grid-template-columns: 1fr; }
+  .rb-section-head { margin-bottom: 40px; }
   .steps-grid, .cf-grid, .contact-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .contact-pitch, .contact-form { padding: 36px 28px; }
+  .rb-cta { padding: 80px 0; }
+  .rb-footer { padding: 60px 0 0; }
 }
-  .rb-footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
-  .rb-why-grid { grid-template-columns: 1fr; }
-  .rb-odoo-inner { grid-template-columns: 1fr; text-align: center; gap: 24px; }
-  .rb-odoo-left { display: flex; justify-content: center; }
-}
+
 @media (max-width: 768px) {
+  .rb-container { padding: 0 18px; }
   .rb-band { padding: 64px 0; }
   .rb-nav-links { display: none; }
-  .rb-stats { grid-template-columns: 1fr; border: none; }
-  .rb-stat { border: none; padding: 16px 8px; }
+  .rb-hamburger { display: flex; }
+  .rb-nav-inner { height: 68px; }
+  .rb-logo-link img { height: 30px; }
+  .rb-stats { grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .rb-stat-num { font-size: 28px; }
+  .rb-hero { padding: 72px 0 56px; }
+  .rb-hero-mark { width: 380px; }
+  .rb-why-col { padding: 28px 22px; }
+  .rb-foot-bottom { flex-direction: column; gap: 8px; text-align: center; }
 }
+
+@media (max-width: 480px) {
+  .rb-container { padding: 0 16px; }
+  .rb-stats { grid-template-columns: 1fr; border: none; }
+  .rb-stat { border: none !important; padding: 12px 8px; }
+  .rb-stat-num { font-size: 32px; }
+  .rb-footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .rb-section-head h2 { font-size: clamp(26px, 7vw, 36px); }
+  .rb-cta-h2 { font-size: clamp(28px, 7vw, 40px); }
+  .rb-cta-p { font-size: 16px; }
+  .rb-cta { padding: 64px 0; }
+  .rb-foot-col { text-align: left; }
+  .contact-hero h1 { font-size: clamp(30px, 8vw, 48px); }
+  .contact-hero p { font-size: 16px; }
+  .budget-pills { flex-direction: column; }
+  .budget-pill { text-align: center; }
+  .wa-fab { bottom: 18px; right: 18px; width: 50px; height: 50px; }
+  .wa-fab__icon { width: 24px; height: 24px; }
+  .wa-fab__tooltip { display: none; }
+}
+
 
 /* ── WhatsApp FAB ── */
 .wa-fab {
