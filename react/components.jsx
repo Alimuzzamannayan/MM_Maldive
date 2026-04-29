@@ -368,13 +368,13 @@ function PartnerBadges() {
         <a href="#" style={{ height: 88, display: "inline-flex", transition: "transform .25s ease" }}
            onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-2px) scale(1.04)"}
            onMouseLeave={(e) => e.currentTarget.style.transform = "none"}>
-          <img src="../assets/odoo-silver-partner.png" alt="Odoo Silver Partner" style={{ height: "100%", width: "auto" }} />
+          <img src="assets/odoo-silver-partner.png" alt="Odoo Silver Partner" style={{ height: "100%", width: "auto" }} />
         </a>
         <span style={{ width: 1, height: 56, background: "linear-gradient(180deg, transparent, rgba(6,16,43,0.18), transparent)" }} />
         <a href="#" style={{ height: 88, display: "inline-flex", transition: "transform .25s ease" }}
            onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-2px) scale(1.04)"}
            onMouseLeave={(e) => e.currentTarget.style.transform = "none"}>
-          <img src="../assets/bop-alliance.png" alt="BOP Alliance" style={{ height: "100%", width: "auto" }} />
+          <img src="assets/bop-alliance.png" alt="BOP Alliance" style={{ height: "100%", width: "auto" }} />
         </a>
       </div>
     </div>

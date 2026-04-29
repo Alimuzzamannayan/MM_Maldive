@@ -15,17 +15,17 @@ function Nav() {
     <nav className={`rb-nav ${scrolled ? "scrolled" : ""}`}>
       <div className="rb-container rb-nav-inner">
         <a href="#" className="rb-logo-link">
-          <img src="../assets/logo-full.png" alt="Metamorphosis" />
+          <img src="assets/logo-full.png" alt="Metamorphosis" />
         </a>
         <ul className="rb-nav-links">
           {[
             ["Services", "#services"],
             ["About", "#why"],
-            ["Contact", "contact.html"],
+            ["Contact", "react/contact.html"],
             ["Blog", "#blog"],
           ].map(([label, href]) => <NavLink key={label} label={label} href={href} />)}
         </ul>
-        <MagneticButton href="contact.html" variant="primary">
+        <MagneticButton href="react/contact.html" variant="primary">
           Get a Quote
         </MagneticButton>
       </div>
@@ -86,7 +86,7 @@ function Hero() {
   return (
     <header className="rb-hero">
       <Aurora />
-      <img src="../assets/logo-mark.png" alt="" className="rb-hero-mark" aria-hidden="true" />
+      <img src="assets/logo-mark.png" alt="" className="rb-hero-mark" aria-hidden="true" />
       <div className="rb-container" style={{ position: "relative", textAlign: "center", maxWidth: 980, margin: "0 auto" }}>
         <div style={{ marginBottom: 24, animation: "rbHeroIn .7s cubic-bezier(.2,.7,.2,1) both" }}>
           <LivePill>NOW SERVING MALÉ &amp; ATOLLS</LivePill>
@@ -118,7 +118,7 @@ function Hero() {
           animation: "rbHeroIn .7s cubic-bezier(.2,.7,.2,1) .28s both",
         }}>
           <MagneticButton href="#services" variant="primary">Explore Services →</MagneticButton>
-          <MagneticButton href="contact.html" variant="ghost">Schedule a Call</MagneticButton>
+          <MagneticButton href="react/contact.html" variant="ghost">Schedule a Call</MagneticButton>
         </div>
 
         <div className="rb-stats" style={{ animation: "rbHeroIn .7s cubic-bezier(.2,.7,.2,1) .4s both" }}>
@@ -201,7 +201,7 @@ function OdooStrip() {
     <section className="rb-odoo-strip">
       <div className="rb-container rb-odoo-inner">
         <div className="rb-odoo-left">
-          <img src="../assets/odoo-silver-partner.png" alt="Odoo Silver Partner" />
+          <img src="assets/odoo-silver-partner.png" alt="Odoo Silver Partner" />
         </div>
         <div className="rb-odoo-mid">
           <div style={{
@@ -212,7 +212,7 @@ function OdooStrip() {
           <p>Implementation, customization and ongoing support for Odoo ERP — accounting, inventory, HR, CRM and more, delivered by certified specialists.</p>
         </div>
         <div>
-          <MagneticButton href="contact.html" variant="odoo">Talk to an Odoo Specialist →</MagneticButton>
+          <MagneticButton href="react/contact.html" variant="odoo">Talk to an Odoo Specialist →</MagneticButton>
         </div>
       </div>
     </section>
@@ -257,7 +257,7 @@ function CTA() {
         <Reveal delay={0.06}><h2 className="rb-cta-h2">Ready to Transform Your Business?</h2></Reveal>
         <Reveal delay={0.12}><p className="rb-cta-p">Tell us about your project — discovery calls are free, confidential and never templated. We'll come back with a clear scope and a realistic timeline within 48 hours.</p></Reveal>
         <Reveal delay={0.18}>
-          <MagneticButton href="contact.html" variant="teal">Contact Us Today →</MagneticButton>
+          <MagneticButton href="react/contact.html" variant="teal">Contact Us Today →</MagneticButton>
         </Reveal>
       </div>
     </section>
@@ -270,7 +270,7 @@ function Footer() {
       <div className="rb-container">
         <div className="rb-footer-grid">
           <div>
-            <img src="../assets/logo-full-light.png" alt="Metamorphosis" style={{ height: 38, width: "auto", marginBottom: 22 }} />
+            <img src="assets/logo-full-light.png" alt="Metamorphosis" style={{ height: 38, width: "auto", marginBottom: 22 }} />
             <p style={{ fontSize: 14, lineHeight: 1.65, fontWeight: 300, maxWidth: 280, color: "rgba(255,255,255,0.6)" }}>
               A Maldives-based multi-service company helping local businesses and expats thrive — from accounting to apps, all under one roof.
             </p>
