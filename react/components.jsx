@@ -1,4 +1,4 @@
-// ============================================================================
+﻿// ============================================================================
 // Metamorphosis MV — React Components
 // Native React base framework with dynamic, futuristic interactions.
 // ============================================================================
@@ -263,11 +263,103 @@ const SERVICES = [
   ]},
 ];
 
+function useIsMobile(breakpoint) {
+  const bp = breakpoint || 768;
+  const [mobile, setMobile] = React.useState(typeof window !== "undefined" && window.innerWidth <= bp);
+  React.useEffect(() => {
+    const check = () => setMobile(window.innerWidth <= bp);
+    window.addEventListener("resize", check);
+    check();
+    return () => window.removeEventListener("resize", check);
+  }, [bp]);
+  return mobile;
+}
+
 function ServiceExplorer() {
   const [activeCat, setActiveCat] = useState(0);
   const [hoverIdx, setHoverIdx] = useState(null);
+  const isMobile = useIsMobile(768);
   const cat = SERVICES[activeCat];
 
+  if (isMobile) {
+    return (
+      <div>
+        {/* Horizontal scrollable category tabs */}
+        <div style={{
+          display: "flex", gap: 10, overflowX: "auto", paddingBottom: 12,
+          scrollbarWidth: "none", WebkitOverflowScrolling: "touch",
+          marginBottom: 20,
+        }}>
+          {SERVICES.map((s, i) => {
+            const active = i === activeCat;
+            return (
+              <button
+                key={s.cat}
+                onClick={() => setActiveCat(i)}
+                style={{
+                  flexShrink: 0,
+                  padding: "10px 16px",
+                  borderRadius: 99,
+                  background: active ? TOKENS.navy : "rgba(255,255,255,0.9)",
+                  color: active ? TOKENS.teal : TOKENS.navy,
+                  border: `1.5px solid ${active ? TOKENS.navy : "rgba(6,16,43,0.12)"}`,
+                  cursor: "pointer",
+                  fontFamily: "Montserrat,sans-serif",
+                  fontWeight: 700, fontSize: 13,
+                  whiteSpace: "nowrap",
+                  transition: "all .2s ease",
+                }}
+              >
+                {s.cat}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Items panel — single column */}
+        <div style={{
+          background: "#fff", borderRadius: 14,
+          boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+          border: "1px solid rgba(6,16,43,0.04)",
+          padding: "20px 16px",
+          position: "relative", overflow: "hidden",
+        }}>
+          <div style={{
+            position: "absolute", top: 0, left: 0, right: 0,
+            height: 3, background: `linear-gradient(90deg, ${TOKENS.teal}, ${TOKENS.blue})`,
+          }} />
+          <div style={{
+            fontFamily: "JetBrains Mono,monospace", fontSize: 10, color: TOKENS.blue,
+            letterSpacing: "2px", textTransform: "uppercase", fontWeight: 500, marginBottom: 4,
+          }}>// {cat.cat}</div>
+          <h3 style={{
+            fontFamily: "Montserrat,sans-serif", fontWeight: 900, fontSize: 18,
+            color: TOKENS.navy, marginBottom: 16, letterSpacing: "-0.02em",
+          }}>
+            {cat.items.length} service{cat.items.length > 1 ? "s" : ""} in this category
+          </h3>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {cat.items.map(([name, desc], i) => (
+              <div
+                key={name}
+                style={{
+                  padding: "14px 16px",
+                  borderRadius: 10,
+                  background: TOKENS.mint,
+                  border: "1px solid rgba(0,229,192,0.2)",
+                }}
+              >
+                <div style={{ fontFamily: "Montserrat,sans-serif", fontWeight: 700, fontSize: 14, color: TOKENS.navy, marginBottom: 4 }}>{name}</div>
+                <div style={{ fontSize: 13, color: TOKENS.body, fontWeight: 300, lineHeight: 1.55 }}>{desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop layout
   return (
     <div style={{ display: "grid", gridTemplateColumns: "260px 1fr", gap: 32, alignItems: "stretch" }}>
       {/* Category rail */}
