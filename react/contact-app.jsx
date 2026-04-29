@@ -1,4 +1,4 @@
-// ============================================================================
+﻿// ============================================================================
 // Contact Page — Metamorphosis MV
 // Inspired by portcities.net/contact: 3-step expectation flow + form + channels.
 // ============================================================================
@@ -62,12 +62,30 @@ function ContactHero() {
 }
 
 function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", company: "", phone: "", service: "", budget: "", message: "" });
-  const [budget, setBudget] = useState("");
+  const [form, setForm] = useState({ name: "", email: "", company: "", phone: "", service: "", companySize: "", message: "" });
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [sent, setSent] = useState(false);
 
   const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
-  const submit = (e) => { e.preventDefault(); setSent(true); };
+  const submit = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Server error");
+      setSent(true);
+    } catch (err) {
+      setError("Failed to send. Please email us directly at marketing@metamorphosis.com.bd");
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <section className="contact-main">
@@ -147,15 +165,20 @@ function ContactForm() {
                   </select>
                 </div>
                 <div className="field" style={{ marginBottom: 14 }}>
-                  <label>Estimated budget</label>
-                  <div className="budget-pills">
-                    {["< $5k","$5k–$15k","$15k–$50k","$50k+","Not sure yet"].map((b) => (
-                      <button type="button" key={b} className={`budget-pill ${budget === b ? "active" : ""}`} onClick={() => setBudget(b)}>{b}</button>
-                    ))}
-                  </div>
+                  <label>Company size</label>
+                  <select value={form.companySize} onChange={set("companySize")}>
+                    <option value="">Select company size…</option>
+                    <option value="<10 employees">&lt;10 employees</option>
+                    <option value="10-50 employees">10–50 employees</option>
+                    <option value="50-250 employees">50–250 employees</option>
+                    <option value="250+ employees">250+ employees</option>
+                  </select>
                 </div>
                 <div className="field"><label>Project details</label><textarea value={form.message} onChange={set("message")} placeholder="A short brief, goals, timeline, anything we should know…" /></div>
-                <button type="submit" className="submit-btn">Send Message →</button>
+                <button type="submit" className="submit-btn" disabled={sending} style={{ opacity: sending ? 0.7 : 1, cursor: sending ? "not-allowed" : "pointer" }}>
+                  {sending ? "Sending…" : "Send Message →"}
+                </button>
+                {error && <p style={{ color: "#e53e3e", fontSize: 13, marginTop: 10, textAlign: "center" }}>{error}</p>}
               </>
             )}
           </form>
