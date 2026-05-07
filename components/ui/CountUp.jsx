@@ -14,25 +14,23 @@ export default function CountUp({ to, duration = 1400 }) {
       setN(Math.round(to * eased));
       if (t < 1) raf = requestAnimationFrame((tt) => tick(tt, start));
     };
+    const start = () => {
+      if (started) return;
+      started = true;
+      raf = requestAnimationFrame((ts) => tick(ts, ts));
+    };
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting && !started) {
-          started = true;
-          raf = requestAnimationFrame((ts) => tick(ts, ts));
-          io.disconnect();
-        }
-      });
-    }, { threshold: 0.4 });
-    if (ref.current) io.observe(ref.current);
-    setTimeout(() => {
-      if (ref.current && !started) {
-        const r = ref.current.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) {
-          started = true;
-          raf = requestAnimationFrame((ts) => tick(ts, ts));
-        }
+      entries.forEach((e) => { if (e.isIntersecting) { start(); io.disconnect(); } });
+    }, { threshold: 0.1 });
+    if (ref.current) {
+      const r = ref.current.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        // already visible — start after hydration settles
+        const t = setTimeout(start, 300);
+        return () => { clearTimeout(t); cancelAnimationFrame(raf); };
       }
-    }, 50);
+      io.observe(ref.current);
+    }
     return () => { cancelAnimationFrame(raf); io.disconnect(); };
   }, [to, duration]);
 

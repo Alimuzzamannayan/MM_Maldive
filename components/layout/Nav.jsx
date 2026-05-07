@@ -32,7 +32,6 @@ const NAV_LINKS = [
   ['Services', '#services'],
   ['About', '#why'],
   ['Contact', '/contact'],
-  ['Blog', '#blog'],
 ];
 
 export default function Nav() {

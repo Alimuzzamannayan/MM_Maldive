@@ -99,6 +99,13 @@ export default function ServiceExplorer() {
           })}
         </div>
       </div>
+
+      {/* SEO: all services rendered in DOM, invisible to users */}
+      <div style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap' }} aria-hidden="true">
+        {SERVICES.map((s) => s.items.map(([name, desc]) => (
+          <div key={name}><h3>{name}</h3><p>{desc}</p></div>
+        )))}
+      </div>
     </div>
   );
 }

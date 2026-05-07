@@ -1,8 +1,16 @@
-const COLS = [
-  ['Services', ['Business Consulting', 'App Development', 'Accounting & MIRA', 'Expat Services', 'All Services']],
-  ['Company', ['About Us', 'Case Studies', 'Blog', 'Careers']],
-  ['Legal', ['Privacy Policy', 'Terms of Service', 'Cookies', 'MIRA Disclosure']],
-  ['Contact', ['Malé, Maldives', 'hello@metamorphosis.mv', '+960 300 0000', 'Get a Quote']],
+const SERVICES_COL = [
+  ['Business Consulting', '#services'],
+  ['App Development', '#services'],
+  ['Accounting & MIRA', '#services'],
+  ['Expat Services', '#services'],
+  ['Odoo ERP', '#services'],
+];
+
+const CONTACT_COL = [
+  { label: 'Malé, Maldives', href: null },
+  { label: 'marketing@metamorphosis.com.bd', href: 'mailto:marketing@metamorphosis.com.bd' },
+  { label: '+960 741 7734', href: 'tel:+9607417734' },
+  { label: 'Get a Quote →', href: '/contact' },
 ];
 
 export default function Footer() {
@@ -16,12 +24,35 @@ export default function Footer() {
               A Maldives-based multi-service company helping local businesses and expats thrive — from accounting to apps, all under one roof.
             </p>
           </div>
-          {COLS.map(([h, items]) => (
-            <div key={h} className="rb-foot-col">
-              <h4>{h}</h4>
-              <ul>{items.map((x) => <li key={x}><a href="#">{x}</a></li>)}</ul>
-            </div>
-          ))}
+
+          <div className="rb-foot-col">
+            <h4>Services</h4>
+            <ul>
+              {SERVICES_COL.map(([label, href]) => (
+                <li key={label}><a href={href}>{label}</a></li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rb-foot-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/contact">Contact Us</a></li>
+              <li><a href="https://wa.me/9607417734" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+              <li><a href="https://metamorphosis.com.bd" target="_blank" rel="noopener noreferrer">Global Site</a></li>
+            </ul>
+          </div>
+
+          <div className="rb-foot-col">
+            <h4>Contact</h4>
+            <ul>
+              {CONTACT_COL.map(({ label, href }) => (
+                <li key={label}>
+                  {href ? <a href={href}>{label}</a> : <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14, fontWeight: 300 }}>{label}</span>}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="rb-foot-bottom">
           <div>© 2026 Metamorphosis MV. All rights reserved.</div>
