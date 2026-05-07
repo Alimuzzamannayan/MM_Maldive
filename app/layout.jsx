@@ -17,8 +17,8 @@ const openSans = Open_Sans({
 });
 
 export const metadata = {
-  title: 'Metamorphosis MV — Driving Business Transformation',
-  description: 'From accounting to app development, we bring 17+ professional services under one roof — built for Maldivian businesses, expats, and the island economy.',
+  title: 'Business Services Maldives | Odoo ERP, Accounting & Consulting | Metamorphosis MV',
+  description: 'Maldives\' leading multi-service company. Odoo Silver Partner offering ERP implementation, MIRA-compliant accounting, expat & visa services, app development and business consulting in Malé.',
 };
 
 export default function RootLayout({ children }) {
