@@ -1,3 +1,4 @@
+'use client';
 import { TOKENS } from '../../lib/tokens';
 
 const PHONE_RAW = '+9607417734';
