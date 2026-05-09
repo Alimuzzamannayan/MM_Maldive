@@ -40,6 +40,7 @@ export default function Footer() {
               <li><a href="/contact">Contact Us</a></li>
               <li><a href="https://wa.me/9607417734" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
               <li><a href="https://metamorphosis.com.bd" target="_blank" rel="noopener noreferrer">Global Site</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
             </ul>
           </div>
 
