@@ -30,7 +30,7 @@ function NavLink({ label, href }) {
 
 const NAV_LINKS = [
   ['Services', '#services'],
-  ['About', '#why'],
+  ['About', '/about'],
   ['Contact', '/contact'],
 ];
 

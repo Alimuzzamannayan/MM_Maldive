@@ -4,6 +4,7 @@ import Services from '../components/home/Services';
 import OdooStrip from '../components/home/OdooStrip';
 import Why from '../components/home/Why';
 import FAQ from '../components/home/FAQ';
+import ERPRescue from '../components/home/ERPRescue';
 import CTA from '../components/home/CTA';
 import Footer from '../components/layout/Footer';
 import WhatsAppFAB from '../components/layout/WhatsAppFAB';
@@ -17,6 +18,7 @@ export default function Home() {
       <OdooStrip />
       <Why />
       <FAQ />
+      <ERPRescue />
       <CTA />
       <Footer />
       <WhatsAppFAB />
