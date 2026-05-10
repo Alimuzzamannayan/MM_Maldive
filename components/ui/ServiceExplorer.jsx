@@ -51,6 +51,13 @@ export default function ServiceExplorer() {
               </div>
             ))}
           </div>
+          {cat.href && (
+            <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid rgba(6,16,43,0.06)' }}>
+              <a href={cat.href} style={{ fontFamily: 'Open Sans,sans-serif', fontWeight: 700, fontSize: 13.5, color: TOKENS.teal, textDecoration: 'none' }}>
+                View all {cat.cat} services →
+              </a>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -98,6 +105,13 @@ export default function ServiceExplorer() {
             );
           })}
         </div>
+        {cat.href && (
+          <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid rgba(6,16,43,0.06)', display: 'flex', justifyContent: 'flex-end' }}>
+            <a href={cat.href} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'Open Sans,sans-serif', fontWeight: 700, fontSize: 13.5, color: TOKENS.teal, textDecoration: 'none', letterSpacing: '0.01em' }}>
+              View all {cat.cat} services →
+            </a>
+          </div>
+        )}
       </div>
 
       {/* SEO: all services rendered in DOM, invisible to users */}

@@ -441,6 +441,30 @@ img { max-width: 100%; display: block; }
  .wa-fab__tooltip { display: none; }
 }
 
+/* Services overview page — mobile */
+@media (max-width: 768px) {
+ .services-card-grid { grid-template-columns: 1fr !important; }
+ .services-mini-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* About page — mobile */
+@media (max-width: 768px) {
+ .about-stats-grid { grid-template-columns: 1fr 1fr !important; }
+ .about-content-grid { grid-template-columns: 1fr !important; }
+ .about-team-grid { grid-template-columns: 1fr !important; }
+ .about-values-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Book a call — mobile */
+@media (max-width: 640px) {
+ .book-call-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Service sub-pages — mobile */
+@media (max-width: 640px) {
+ .service-items-grid { grid-template-columns: 1fr !important; }
+}
+
 /* WhatsApp FAB */
 .wa-fab {
  position: fixed;

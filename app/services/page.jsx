@@ -82,7 +82,7 @@ export default function Services() {
         <div className="rb-container">
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
             {CATEGORIES.map(({ tag, title, desc, href, color, services }) => (
-              <div key={title} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderRadius: 18, border: '1.5px solid rgba(6,16,43,0.08)', overflow: 'hidden', background: '#fff', boxShadow: '0 4px 24px rgba(6,16,43,0.04)' }}>
+              <div key={title} className="services-card-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, borderRadius: 18, border: '1.5px solid rgba(6,16,43,0.08)', overflow: 'hidden', background: '#fff', boxShadow: '0 4px 24px rgba(6,16,43,0.04)' }}>
                 {/* Left */}
                 <div style={{ padding: '40px 40px', borderRight: '1px solid rgba(6,16,43,0.06)' }}>
                   <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 11, fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color, marginBottom: 14 }}>{tag}</div>
@@ -94,7 +94,7 @@ export default function Services() {
                 </div>
                 {/* Right — service list */}
                 <div style={{ padding: '40px 40px', background: 'rgba(248,252,255,0.6)' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                  <div className="services-mini-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                     {services.map((s) => (
                       <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', borderRadius: 10, background: '#fff', border: '1px solid rgba(6,16,43,0.06)' }}>
                         <div style={{ width: 7, height: 7, borderRadius: '50%', background: color, flexShrink: 0 }} />
