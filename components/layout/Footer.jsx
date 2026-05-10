@@ -29,8 +29,8 @@ export default function Footer() {
             {/* Social links */}
             <div style={{ display: 'flex', gap: 10 }}>
               {[
-                { href: 'https://www.linkedin.com/company/metamorphosis-mv', icon: LI_SVG, label: 'LinkedIn' },
-                { href: 'https://www.facebook.com/metamorphosis.mv', icon: FB_SVG, label: 'Facebook' },
+                { href: 'https://www.linkedin.com/company/metamorphosis-odoo-erp', icon: LI_SVG, label: 'LinkedIn' },
+                { href: 'https://www.facebook.com/metamorphosis.com.bd', icon: FB_SVG, label: 'Facebook' },
               ].map(({ href, icon, label }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
                   style={{ width: 34, height: 34, borderRadius: 8, background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all .2s ease' }}
