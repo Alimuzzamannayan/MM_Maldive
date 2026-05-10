@@ -1,3 +1,4 @@
+'use client';
 const SERVICES_COL = [
   ['Odoo ERP', '/services/odoo-erp'],
   ['Accounting & MIRA', '/services/accounting-mira'],

@@ -161,8 +161,7 @@ export default function About() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24, maxWidth: 960, margin: '0 auto' }}>
             {TEAM.map(({ name, role, bio }) => (
-              <div key={name} style={{ padding: '32px 28px', borderRadius: 16, border: '1.5px solid rgba(6,16,43,0.08)', background: '#fff', transition: 'all .25s ease' }}
-                onMouseEnter={undefined} onMouseLeave={undefined}>
+              <div key={name} style={{ padding: '32px 28px', borderRadius: 16, border: '1.5px solid rgba(6,16,43,0.08)', background: '#fff', transition: 'all .25s ease' }}>
                 <div style={{ width: 48, height: 48, borderRadius: 14, background: `linear-gradient(135deg, ${TOKENS.teal}, ${TOKENS.blue})`, marginBottom: 20 }} />
                 <div style={{ fontFamily: 'Montserrat,sans-serif', fontWeight: 800, fontSize: 16, color: TOKENS.navy, marginBottom: 4 }}>{name}</div>
                 <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 11, fontWeight: 500, letterSpacing: '1.5px', textTransform: 'uppercase', color: TOKENS.teal, marginBottom: 14 }}>{role}</div>
