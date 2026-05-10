@@ -31,7 +31,7 @@ export default function Hero() {
           From accounting to app development, we bring 17+ professional services under one roof — built for Maldivian businesses, expats, and the island economy that supports them.
         </p>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 80, animation: 'rbHeroIn .7s cubic-bezier(.2,.7,.2,1) .28s both' }}>
-          <MagneticButton href="#services" variant="primary">Explore Services →</MagneticButton>
+          <MagneticButton href="/services" variant="primary">Explore Services →</MagneticButton>
           <MagneticButton href="/contact" variant="ghost">Schedule a Call</MagneticButton>
         </div>
         <div className="rb-stats" style={{ animation: 'rbHeroIn .7s cubic-bezier(.2,.7,.2,1) .4s both' }}>

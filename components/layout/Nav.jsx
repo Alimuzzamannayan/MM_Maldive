@@ -29,7 +29,7 @@ function NavLink({ label, href }) {
 }
 
 const NAV_LINKS = [
-  ['Services', '#services'],
+  ['Services', '/services'],
   ['About', '/about'],
   ['Contact', '/contact'],
 ];
