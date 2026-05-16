@@ -68,7 +68,7 @@ const CONSULTANTS = [
   {
     name: 'Alimuzzaman Nayan',
     role: 'Functional Consultant',
-    img: '/assets/team/arafat.jpg',
+    img: '/assets/team/nayan.png',
     experience: '3+ Years in ERP Implementation',
     domain: 'Sales & CRM',
     cert: 'Odoo v17 Functional Certification',
