@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { AppProvider } from '../components/providers/AppProvider';
 import CursorHalo from '../components/ui/CursorHalo';
 import '../styles/globals.css';
+import { localBusinessSchema, organizationSchema, websiteSchema, jsonLd } from '../lib/schema';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -47,6 +48,14 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(localBusinessSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(websiteSchema()) }}
+        />
         <AppProvider>
           <CursorHalo />
           {children}
