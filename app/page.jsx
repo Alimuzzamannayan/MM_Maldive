@@ -8,7 +8,6 @@ import ERPRescue from '../components/home/ERPRescue';
 import CTA from '../components/home/CTA';
 import TrustedBy from '../components/home/TrustedBy';
 import Footer from '../components/layout/Footer';
-import ChatFABs from '../components/layout/WhatsAppFAB';
 import { organizationSchema, faqSchema, jsonLd } from '../lib/schema';
 import { HOME_FAQS } from '../lib/faq-data';
 
@@ -31,7 +30,6 @@ export default function Home() {
       <ERPRescue />
       <CTA />
       <Footer />
-      <ChatFABs />
     </>
   );
 }

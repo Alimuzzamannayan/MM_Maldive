@@ -2,6 +2,7 @@ import { Montserrat, Open_Sans, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { AppProvider } from '../components/providers/AppProvider';
 import CursorHalo from '../components/ui/CursorHalo';
+import ChatFABs from '../components/layout/WhatsAppFAB';
 import '../styles/globals.css';
 import { localBusinessSchema, organizationSchema, websiteSchema, jsonLd } from '../lib/schema';
 
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
         <AppProvider>
           <CursorHalo />
           {children}
+          <ChatFABs />
         </AppProvider>
         <Analytics />
       </body>
