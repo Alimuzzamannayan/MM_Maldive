@@ -525,6 +525,26 @@ img { max-width: 100%; display: block; }
  50% { box-shadow: 0 4px 32px rgba(37,211,102,0.75); }
 }
 
+/* ── Marquee ──────────────────────────────── */
+.rb-marquee-track {
+ width: 100%;
+ overflow: hidden;
+ -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+ mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.rb-marquee-inner {
+ display: flex;
+ gap: 48px;
+ align-items: center;
+ width: max-content;
+ animation: rb-marquee 40s linear infinite;
+}
+@keyframes rb-marquee {
+ 0% { transform: translateX(0); }
+ 100% { transform: translateX(-50%); }
+}
+.rb-marquee-track:hover .rb-marquee-inner { animation-play-state: paused; }
+
 /* ── Blog ─────────────────────────────────── */
 .rb-blog-hero {
  padding: 80px 0 48px;

@@ -6,6 +6,7 @@ import Why from '../components/home/Why';
 import FAQ from '../components/home/FAQ';
 import ERPRescue from '../components/home/ERPRescue';
 import CTA from '../components/home/CTA';
+import TrustedBy from '../components/home/TrustedBy';
 import Footer from '../components/layout/Footer';
 import WhatsAppFAB from '../components/layout/WhatsAppFAB';
 import { organizationSchema, faqSchema, jsonLd } from '../lib/schema';
@@ -23,6 +24,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <Services />
+      <TrustedBy />
       <OdooStrip />
       <Why />
       <FAQ />
