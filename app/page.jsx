@@ -8,10 +8,14 @@ import ERPRescue from '../components/home/ERPRescue';
 import CTA from '../components/home/CTA';
 import Footer from '../components/layout/Footer';
 import WhatsAppFAB from '../components/layout/WhatsAppFAB';
+import { organizationSchema, faqSchema, jsonLd } from '../lib/schema';
+import { HOME_FAQS } from '../lib/faq-data';
 
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(organizationSchema()) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema(HOME_FAQS)) }} />
       <Nav />
       <Hero />
       <Services />
