@@ -75,6 +75,34 @@ export default function OdooERP() {
         </div>
       </section>
 
+      <section style={{ padding: '80px 0', background: TOKENS.navy, overflow: 'hidden' }}>
+        <div className="rb-container">
+          <Tag center color={TOKENS.teal}>Odoo Mobile App</Tag>
+          <h2 style={{ fontWeight: 900, fontSize: 'clamp(28px,4vw,40px)', color: '#fff', letterSpacing: '-0.025em', textAlign: 'center', margin: '16px 0 12px' }}>Manage Your Business From Anywhere</h2>
+          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.65)', fontWeight: 300, textAlign: 'center', maxWidth: 560, margin: '0 auto 48px', lineHeight: 1.65 }}>
+            Odoo Enterprise includes the full mobile app at no extra cost — available on Android and iOS. Approve purchase orders, review reports, and manage HR from your phone.
+          </p>
+          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', alignItems: 'flex-end' }}>
+            {[1,2,3,4,5,6].map((n) => (
+              <img
+                key={n}
+                src={`/assets/odoo-app-${n}.webp`}
+                alt={`Odoo mobile app screen ${n}`}
+                style={{ height: n === 1 || n === 6 ? 260 : n === 2 || n === 5 ? 300 : 340, width: 'auto', borderRadius: 16, boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}
+              />
+            ))}
+          </div>
+          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40, flexWrap: 'wrap' }}>
+            <a href="https://play.google.com/store/apps/details?id=com.odoo.mobile" target="_blank" rel="noopener noreferrer" style={{ padding: '12px 24px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 10, color: '#fff', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+              Google Play →
+            </a>
+            <a href="https://apps.apple.com/us/app/odoo/id1272543640" target="_blank" rel="noopener noreferrer" style={{ padding: '12px 24px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 10, color: '#fff', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+              App Store →
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section style={{ padding: '48px 0', background: '#fff', borderTop: '1px solid rgba(6,16,43,0.06)' }}>
         <div className="rb-container">
           <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 11, fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: TOKENS.blue, marginBottom: 16 }}>// Related Services</div>
