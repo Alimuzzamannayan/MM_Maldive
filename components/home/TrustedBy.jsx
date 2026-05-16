@@ -15,17 +15,20 @@ const CLIENT_LOGOS = [
 ];
 
 const MEDIA_LOGOS = [
-  { file: 'Bangladesh-protidin.webp', alt: 'Bangladesh Protidin' },
-  { file: 'Brand-Practitioners-Bangladesh.webp', alt: 'Brand Practitioners Bangladesh' },
-  { file: 'TBS-news.webp', alt: 'TBS News' },
-  { file: 'Times-of-Bangladesh.webp', alt: 'Times of Bangladesh' },
-  { file: 'bd24live.webp', alt: 'BD24 Live' },
-  { file: 'bonik-barta.png', alt: 'Bonik Barta' },
-  { file: 'bss-news.webp', alt: 'BSS News' },
-  { file: 'desh-rupantor.webp', alt: 'Desh Rupantor' },
-  { file: 'daily-star.webp', alt: 'The Daily Star' },
-  { file: 'daily-campus.webp', alt: 'The Daily Campus' },
-  { file: 'ittefaq.webp', alt: 'Daily Ittefaq' },
+  { file: 'Bangladesh-protidin.webp', alt: 'Bangladesh Protidin', href: 'https://www.bd-pratidin.com/campus-online/2025/11/25/1184063' },
+  { file: 'Brand-Practitioners-Bangladesh.webp', alt: 'Brand Practitioners Bangladesh', href: 'https://brandpractitioners.com/metamorphosis-ltd-emerged-the-partnership-with-classic-chemical-industries-ltd-to-ensure-optimized-operation-across-country/' },
+  { file: 'TBS-news.webp', alt: 'TBS News', href: 'https://www.tbsnews.net/economy/corporates/metamorphosis-ltd-implement-odoo-erp-classic-chemical-industries-1112991' },
+  { file: 'Times-of-Bangladesh.webp', alt: 'Times of Bangladesh', href: 'https://tob.news/iubat-partners-with-odoo-on-erp-education-program/' },
+  { file: 'amar-desh.webp', alt: 'Amar Desh', href: 'https://www.dailyamardesh.com/education/campus/amd3su0ftgahi' },
+  { file: 'bd24live.webp', alt: 'BD24 Live', href: 'https://www.bd24live.com/bangla/778448' },
+  { file: 'bonik-barta.png', alt: 'Bonik Barta', href: 'https://www.bonikbarta.com/economy/r6XLrH3cczH6E0Cy' },
+  { file: 'bss-news.webp', alt: 'BSS News', href: 'https://www.bssnews.net/news/334943' },
+  { file: 'jagojanata.webp', alt: 'Jago Janata', href: 'https://dailyjagojanata.com/' },
+  { file: 'desh-rupantor.webp', alt: 'Desh Rupantor', href: 'https://www.deshrupantor.com/641444/' },
+  { file: 'deshkal-news.webp', alt: 'Deshkal News', href: 'https://bangla.deshkalnews.com/education/33853' },
+  { file: 'ittefaq.webp', alt: 'Daily Ittefaq', href: 'https://www.ittefaq.com.bd/727063/' },
+  { file: 'daily-campus.webp', alt: 'The Daily Campus', href: 'https://thedailycampus.com/private-university/228913' },
+  { file: 'daily-star.webp', alt: 'The Daily Star', href: 'https://www.thedailystar.net/business/organisation-news/press-releases/news/iubat-signs-mou-odoo-launch-industry-focused-erp' },
 ];
 
 export default function TrustedBy() {
@@ -46,7 +49,7 @@ export default function TrustedBy() {
                 src={`/assets/clients/${logo}`}
                 alt=""
                 aria-hidden="true"
-                style={{ height: 32, width: 'auto', objectFit: 'contain', filter: 'grayscale(100%) opacity(0.55)', flexShrink: 0 }}
+                style={{ height: 32, width: 'auto', objectFit: 'contain', flexShrink: 0 }}
               />
             ))}
           </div>
@@ -60,13 +63,13 @@ export default function TrustedBy() {
             As Featured In the Media
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, justifyContent: 'center', alignItems: 'center' }}>
-            {MEDIA_LOGOS.map(({ file, alt }) => (
-              <img
-                key={file}
-                src={`/assets/media/${file}`}
-                alt={alt}
-                style={{ height: 28, width: 'auto', objectFit: 'contain', filter: 'grayscale(100%) opacity(0.5)' }}
-              />
+            {MEDIA_LOGOS.map(({ file, alt, href }) => (
+              <a key={file} href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.75, transition: 'opacity .2s ease' }}
+                onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
+                onMouseLeave={(e) => e.currentTarget.style.opacity = 0.75}
+              >
+                <img src={`/assets/media/${file}`} alt={alt} style={{ height: 28, width: 'auto', objectFit: 'contain' }} />
+              </a>
             ))}
           </div>
         </div>
