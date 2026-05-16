@@ -46,6 +46,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
+        <link rel="alternate" hrefLang="en" href="https://mv.metamorphosis.com.bd" />
       </head>
       <body>
         <script

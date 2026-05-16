@@ -11,6 +11,10 @@ import WhatsAppFAB from '../components/layout/WhatsAppFAB';
 import { organizationSchema, faqSchema, jsonLd } from '../lib/schema';
 import { HOME_FAQS } from '../lib/faq-data';
 
+export const metadata = {
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd' },
+};
+
 export default function Home() {
   return (
     <>

@@ -13,6 +13,7 @@ export const metadata = {
     url: 'https://mv.metamorphosis.com.bd/about',
     images: [{ url: 'https://mv.metamorphosis.com.bd/assets/logo-full.png' }],
   },
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd/about' },
 };
 
 const STATS = [

@@ -13,6 +13,7 @@ export const metadata = {
     description: 'DVR work permits, dependent visas, expat relocation support — Malé, Maldives.',
     url: 'https://mv.metamorphosis.com.bd/services/expat-visa',
   },
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd/services/expat-visa' },
 };
 
 const SERVICES = [['DVR & Work Permit Processing','Initial work permit applications, quota verification, Ministry of Economic Development filings, and renewal management.'],['Dependent Visa','Dependent visa applications and renewals for family members of expatriate workers.'],['Expat Relocation','Housing search, banking setup, school enrollment, and practical onboarding into Malé life.'],['Government Liaison','Direct representation with ministries, MED, and licensing bodies — we navigate bureaucracy on your behalf.'],['Company Registration','Full company incorporation in the Maldives — trade name reservation, MED registration, and statutory filings.'],['Compliance Advisory','Stay aligned with MED regulations, employment law, and sector-specific licensing requirements.']];

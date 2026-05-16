@@ -5,6 +5,7 @@ import { TOKENS } from '../../lib/tokens';
 export const metadata = {
   title: 'Privacy Policy | Metamorphosis MV',
   description: 'Privacy Policy for Metamorphosis MV. Learn how we collect, use, and protect your personal information.',
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd/privacy-policy' },
 };
 
 const SECTIONS = [

@@ -13,6 +13,7 @@ export const metadata = {
     description: 'GST filing, income tax, bookkeeping — fully aligned with MIRA requirements.',
     url: 'https://mv.metamorphosis.com.bd/services/accounting-mira',
   },
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd/services/accounting-mira' },
 };
 
 const SERVICES = [['GST Registration & Returns','Monthly and annual GST filings aligned with MIRA requirements — accurate, on time, audit-ready.'],['Income Tax Filing','Corporate income tax returns prepared and filed in compliance with the Maldives Income Tax Act.'],['Bookkeeping','Day-to-day transaction recording, bank reconciliation, and ledger maintenance.'],['Payroll Processing','Monthly payroll calculations, payslips, and pension (MPAO) contribution management.'],['Financial Reporting','Monthly P&L, balance sheet, and cash flow statements for management and audit purposes.'],['Audit Support','Year-end audit preparation and liaison with external auditors — documentation, reconciliations, and schedules.']];

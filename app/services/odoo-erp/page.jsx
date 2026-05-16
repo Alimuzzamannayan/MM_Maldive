@@ -13,6 +13,7 @@ export const metadata = {
     description: 'Certified Odoo Silver Partner. Full ERP implementation for Maldivian businesses.',
     url: 'https://mv.metamorphosis.com.bd/services/odoo-erp',
   },
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd/services/odoo-erp' },
 };
 
 const MODULES = ['Accounting & Finance','Inventory & Warehouse','Human Resources & Payroll','CRM & Sales','Project Management','Purchase & Procurement','Point of Sale (POS)','Manufacturing','Website & E-commerce','Field Service'];

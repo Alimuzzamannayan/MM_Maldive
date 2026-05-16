@@ -13,6 +13,7 @@ export const metadata = {
     description: 'Strategy, operations, HR, and project management for Maldivian businesses.',
     url: 'https://mv.metamorphosis.com.bd/services/business-consulting',
   },
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd/services/business-consulting' },
 };
 
 const SERVICES = [['Business Consulting','Growth strategy, market entry, operational efficiency, and organisational design — tailored to the Maldivian economy.'],['Project Management','End-to-end coordination for capital projects, IT rollouts, and business transformation initiatives.'],['HR & Recruitment','Talent sourcing, onboarding, employment contracts, HR policy, and staff management across resorts and tech.'],['Operations Outsourcing','Run your back-office through us — payroll, admin, procurement, vendor management, and reporting.'],['Guest House Management','Full-service operations management for guesthouse owners across the Maldives — front desk to financials.'],['Procurement Support','Supplier identification, cost negotiation, purchase orders, and inter-atoll logistics coordination.']];

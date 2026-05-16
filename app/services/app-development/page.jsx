@@ -13,6 +13,7 @@ export const metadata = {
     description: 'Custom iOS, Android and web apps for Maldivian businesses.',
     url: 'https://mv.metamorphosis.com.bd/services/app-development',
   },
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd/services/app-development' },
 };
 
 const SERVICES = [['Custom Web Development','Modern, fast websites and web applications built with Next.js, React, and headless tooling. SEO-optimized from day one.'],['Mobile App Development','iOS and Android apps built in-house by our team — cross-platform and native. Resort apps, booking platforms, internal tools.'],['Branding & Design','Logo design, brand identity systems, brand guidelines, packaging, and marketing collateral.'],['Digital Marketing','SEO strategy, Google Ads, social media management, and content marketing for local Maldivian growth.'],['UI/UX Design','User interface design and user experience research — wireframes, prototypes, and design systems.'],['Maintenance & Support','Ongoing website and app maintenance, updates, security patches, and performance optimization.']];

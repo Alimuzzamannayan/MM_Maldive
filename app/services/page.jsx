@@ -12,6 +12,7 @@ export const metadata = {
     description: '17+ professional services for Maldivian businesses. Odoo ERP, accounting, consulting, app development, expat visa.',
     url: 'https://mv.metamorphosis.com.bd/services',
   },
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd/services' },
 };
 
 const CATEGORIES = [

@@ -8,6 +8,7 @@ import Footer from '../../components/layout/Footer';
 export const metadata = {
   title: 'Contact — Metamorphosis MV',
   description: "Tell us about your project. Discovery calls are free, confidential and never templated. We'll reply within 48 hours.",
+  alternates: { canonical: 'https://mv.metamorphosis.com.bd/contact' },
 };
 
 export default function Contact() {
