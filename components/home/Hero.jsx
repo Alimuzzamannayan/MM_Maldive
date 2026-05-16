@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <header className="rb-hero">
       <Aurora />
-      <img src="/assets/logo-mark.png" alt="" className="rb-hero-mark" aria-hidden="true" />
+      <img src="/assets/logo-mark.png" alt="" className="rb-hero-mark" aria-hidden="true" width={720} height={720} />
       <div className="rb-container" style={{ position: 'relative', textAlign: 'center', maxWidth: 980, margin: '0 auto' }}>
         <div style={{ marginBottom: 24, animation: 'rbHeroIn .7s cubic-bezier(.2,.7,.2,1) both' }}>
           <LivePill>NOW SERVING MALÉ &amp; ATOLLS</LivePill>

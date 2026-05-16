@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="rb-container">
         <div className="rb-footer-grid">
           <div>
-            <img src="/assets/logo-full-light.png" alt="Metamorphosis" style={{ height: 38, width: 'auto', marginBottom: 22 }} />
+            <img src="/assets/logo-full-light.png" alt="Metamorphosis" width={180} height={38} style={{ height: 38, width: 'auto', marginBottom: 22 }} />
             <p style={{ fontSize: 14, lineHeight: 1.65, fontWeight: 300, maxWidth: 280, color: 'rgba(255,255,255,0.6)', marginBottom: 20 }}>
               A Maldives-based multi-service company helping local businesses and expats thrive — from accounting to apps, all under one roof.
             </p>

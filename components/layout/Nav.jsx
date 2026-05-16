@@ -57,7 +57,7 @@ export default function Nav() {
       <nav className={`rb-nav ${scrolled ? 'scrolled' : ''}`} style={{ position: 'sticky', top: 0, zIndex: 150 }}>
         <div className="rb-container rb-nav-inner">
           <a href="/" className="rb-logo-link" onClick={close}>
-            <img src="/assets/logo-full.png" alt="Metamorphosis" style={{ height: 36, width: 'auto' }} />
+            <img src="/assets/logo-full.png" alt="Metamorphosis" width={180} height={36} style={{ height: 36, width: 'auto' }} />
           </a>
           <ul className="rb-nav-links">
             {NAV_LINKS.map(([label, href]) => <NavLink key={label} label={label} href={href} />)}

@@ -1,4 +1,4 @@
-import { Montserrat, Open_Sans } from 'next/font/google';
+import { Montserrat, Open_Sans, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { AppProvider } from '../components/providers/AppProvider';
 import CursorHalo from '../components/ui/CursorHalo';
@@ -15,6 +15,12 @@ const openSans = Open_Sans({
   subsets: ['latin'],
   variable: '--font-open-sans',
   weight: ['300', '400', '600', '700'],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  weight: ['400', '500'],
 });
 
 export const metadata = {
@@ -40,12 +46,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
         <link rel="alternate" hrefLang="en" href="https://mv.metamorphosis.com.bd" />
       </head>
       <body>
