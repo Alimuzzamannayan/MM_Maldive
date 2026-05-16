@@ -3,6 +3,7 @@ import Footer from '../../../components/layout/Footer';
 import MagneticButton from '../../../components/ui/MagneticButton';
 import Tag from '../../../components/ui/Tag';
 import { TOKENS } from '../../../lib/tokens';
+import { serviceSchema, breadcrumbSchema, jsonLd } from '../../../lib/schema';
 
 export const metadata = {
   title: 'Expat & Visa Services Maldives | DVR Work Permit | Metamorphosis MV',
@@ -19,6 +20,8 @@ const SERVICES = [['DVR & Work Permit Processing','Initial work permit applicati
 export default function ExpatVisa() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema({ name: 'Expat & Visa Services', description: 'DVR work permits, dependent visas, expat relocation and government liaison for expatriates in the Maldives.', url: '/services/expat-visa', serviceType: 'Immigration Services' })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Services', url: '/services' }, { name: 'Expat & Visa', url: '/services/expat-visa' }])) }} />
       <Nav />
       <section style={{ padding: '100px 0 72px', background: 'linear-gradient(160deg, #06102B 0%, #0d2d5e 100%)', position: 'relative', overflow: 'hidden' }}>
         <div className="rb-container" style={{ position: 'relative', zIndex: 1 }}>

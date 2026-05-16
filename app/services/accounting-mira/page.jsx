@@ -3,6 +3,7 @@ import Footer from '../../../components/layout/Footer';
 import MagneticButton from '../../../components/ui/MagneticButton';
 import Tag from '../../../components/ui/Tag';
 import { TOKENS } from '../../../lib/tokens';
+import { serviceSchema, breadcrumbSchema, jsonLd } from '../../../lib/schema';
 
 export const metadata = {
   title: 'MIRA-Compliant Accounting Maldives | Metamorphosis MV',
@@ -19,6 +20,8 @@ const SERVICES = [['GST Registration & Returns','Monthly and annual GST filings 
 export default function AccountingMIRA() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema({ name: 'MIRA-Compliant Accounting', description: 'GST registration and returns, income tax filings, bookkeeping and payroll — fully aligned with MIRA regulations in the Maldives.', url: '/services/accounting-mira', serviceType: 'Accounting Services' })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Services', url: '/services' }, { name: 'Accounting & MIRA', url: '/services/accounting-mira' }])) }} />
       <Nav />
       <section style={{ padding: '100px 0 72px', background: 'linear-gradient(160deg, #06102B 0%, #0d2d5e 100%)', position: 'relative', overflow: 'hidden' }}>
         <div className="rb-container" style={{ position: 'relative', zIndex: 1 }}>

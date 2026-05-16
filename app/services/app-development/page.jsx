@@ -3,6 +3,7 @@ import Footer from '../../../components/layout/Footer';
 import MagneticButton from '../../../components/ui/MagneticButton';
 import Tag from '../../../components/ui/Tag';
 import { TOKENS } from '../../../lib/tokens';
+import { serviceSchema, breadcrumbSchema, jsonLd } from '../../../lib/schema';
 
 export const metadata = {
   title: 'App & Web Development Maldives | Metamorphosis MV',
@@ -19,6 +20,8 @@ const SERVICES = [['Custom Web Development','Modern, fast websites and web appli
 export default function AppDevelopment() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema({ name: 'App & Web Development', description: 'Custom mobile apps, websites, branding and digital marketing for businesses in the Maldives.', url: '/services/app-development', serviceType: 'Software Development' })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Services', url: '/services' }, { name: 'App Development', url: '/services/app-development' }])) }} />
       <Nav />
       <section style={{ padding: '100px 0 72px', background: 'linear-gradient(160deg, #06102B 0%, #0d2d5e 100%)', position: 'relative', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -120, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(59,130,246,0.2), transparent 65%)', pointerEvents: 'none' }} />

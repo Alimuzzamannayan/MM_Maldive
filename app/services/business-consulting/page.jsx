@@ -3,6 +3,7 @@ import Footer from '../../../components/layout/Footer';
 import MagneticButton from '../../../components/ui/MagneticButton';
 import Tag from '../../../components/ui/Tag';
 import { TOKENS } from '../../../lib/tokens';
+import { serviceSchema, breadcrumbSchema, jsonLd } from '../../../lib/schema';
 
 export const metadata = {
   title: 'Business Consulting Maldives | Metamorphosis MV',
@@ -19,6 +20,8 @@ const SERVICES = [['Business Consulting','Growth strategy, market entry, operati
 export default function BusinessConsulting() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema({ name: 'Business Consulting', description: 'Growth strategy, project management, HR, operations outsourcing and guesthouse management for businesses in the Maldives.', url: '/services/business-consulting', serviceType: 'Business Consulting' })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Services', url: '/services' }, { name: 'Business Consulting', url: '/services/business-consulting' }])) }} />
       <Nav />
       <section style={{ padding: '100px 0 72px', background: 'linear-gradient(160deg, #06102B 0%, #0d2d5e 100%)', position: 'relative', overflow: 'hidden' }}>
         <div className="rb-container" style={{ position: 'relative', zIndex: 1 }}>

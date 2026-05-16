@@ -3,6 +3,7 @@ import Footer from '../../../components/layout/Footer';
 import MagneticButton from '../../../components/ui/MagneticButton';
 import Tag from '../../../components/ui/Tag';
 import { TOKENS } from '../../../lib/tokens';
+import { serviceSchema, breadcrumbSchema, jsonLd } from '../../../lib/schema';
 
 export const metadata = {
   title: 'Odoo ERP Implementation Maldives | Metamorphosis MV',
@@ -20,6 +21,8 @@ const STEPS = [['Discovery','We map your business processes, pain points and req
 export default function OdooERP() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(serviceSchema({ name: 'Odoo ERP Implementation', description: 'Certified Odoo Silver Partner offering ERP implementation, customization, training and support for businesses in the Maldives.', url: '/services/odoo-erp', serviceType: 'ERP Implementation' })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Services', url: '/services' }, { name: 'Odoo ERP', url: '/services/odoo-erp' }])) }} />
       <Nav />
       <section style={{ padding: '100px 0 72px', background: 'linear-gradient(160deg, #06102B 0%, #0d2d5e 100%)', position: 'relative', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -120, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(113,75,103,0.3), transparent 65%)', pointerEvents: 'none' }} />
