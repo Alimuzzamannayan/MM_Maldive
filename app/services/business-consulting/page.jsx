@@ -53,6 +53,19 @@ export default function BusinessConsulting() {
         </div>
       </section>
 
+      <section style={{ padding: '48px 0', background: '#fff', borderTop: '1px solid rgba(6,16,43,0.06)' }}>
+        <div className="rb-container">
+          <div style={{ fontFamily: 'JetBrains Mono,monospace', fontSize: 11, fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: TOKENS.blue, marginBottom: 16 }}>// Related Services</div>
+          <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
+            {[['Odoo ERP Implementation', '/services/odoo-erp'], ['Expat & Visa Services', '/services/expat-visa']].map(([label, href]) => (
+              <a key={label} href={href} style={{ padding: '12px 20px', borderRadius: 99, border: '1.5px solid rgba(6,16,43,0.12)', fontSize: 14, fontWeight: 600, color: TOKENS.navy, textDecoration: 'none' }}>
+                {label} →
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section style={{ padding: '80px 0', background: TOKENS.navy, textAlign: 'center' }}>
         <div className="rb-container">
           <h2 style={{ fontWeight: 900, fontSize: 'clamp(28px,4vw,40px)', color: '#fff', letterSpacing: '-0.025em', marginBottom: 16 }}>Let&apos;s Talk About Your Business</h2>
